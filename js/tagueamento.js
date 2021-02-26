@@ -13,3 +13,17 @@
     
     ga('create', '​UA-12345-6', 'auto');
     ga('send', 'pageview');
+
+        // 1º Item do Arquivo Instruções.pdf <MENU>
+        let Econtato = document.getElementsByClassName('menu-lista-link menu-lista-contato')[0]
+            Econtato.addEventListener('click', function(){
+            ga('send', 'event', 'menu', 'entre_em_contato', 'link_externo');
+        });
+
+         // 2º Item do Arquivo Instruções.pdf <DOWNLOAD>   
+        let download = document.getElementsByClassName('menu-lista-link menu-lista-download')[0]
+        download.addEventListener('click', function(){
+        ga('send', 'event', 'menu', 'download_pdf', 'download_pdf');
+        }); 
+
+        
