@@ -15,15 +15,41 @@
     ga('send', 'pageview');
 
         // 1º Item do Arquivo Instruções.pdf <MENU>
-        let Econtato = document.getElementsByClassName('menu-lista-link menu-lista-contato')[0]
+            let Econtato = document.getElementsByClassName('menu-lista-link menu-lista-contato')[0]
             Econtato.addEventListener('click', function(){
             ga('send', 'event', 'menu', 'entre_em_contato', 'link_externo');
         });
 
-         // 2º Item do Arquivo Instruções.pdf <DOWNLOAD>   
-        let download = document.getElementsByClassName('menu-lista-link menu-lista-download')[0]
-        download.addEventListener('click', function(){
-        ga('send', 'event', 'menu', 'download_pdf', 'download_pdf');
-        }); 
+        // 2º Item do Arquivo Instruções.pdf <DOWNLOAD>   
+            let download = document.getElementsByClassName('menu-lista-link menu-lista-download')[0]
+            download.addEventListener('click', function(){
+            ga('send', 'event', 'menu', 'download_pdf', 'download_pdf');
+            }); 
 
-        
+            
+        //3º Item do Arquivo Instruções.pdf< <BOTÕES>
+
+            //Lorem
+              let bt_lorem = document.querySelector('.card.card-montadoras[data-id="lorem"]');
+            if(bt_lorem != null){
+                bt_lorem.addEventListener("click",function(){
+                    ga('send', 'event', "analise", "ver_mais", bt_lorem.getAttribute('data-name'));
+                });
+            }
+
+            //Dolor
+             let bt_dolor = document.querySelector('.card.card-montadoras[data-id="dolor"]');
+            if(bt_dolor != null){
+                bt_dolor.addEventListener("click",function(){
+                    ga('send', 'event', "analise", "ver_mais", bt_dolor.getAttribute('data-name'));
+                });
+            }
+            
+            //Ipsum
+            let bt_ipsum = document.querySelector('.card.card-montadoras[data-id="ipsum"]');
+            if(bt_ipsum != null){
+                bt_ipsum.addEventListener("click",function(){
+                    ga('send', 'event', "analise", "ver_mais", bt_ipsum.getAttribute('data-name'));
+                });
+            }
+
