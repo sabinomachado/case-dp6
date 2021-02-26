@@ -26,7 +26,7 @@
             ga('send', 'event', 'menu', 'download_pdf', 'download_pdf');
             }); 
 
-            
+
         //3º Item do Arquivo Instruções.pdf< <BOTÕES>
 
             //Lorem
@@ -53,3 +53,43 @@
                 });
             }
 
+
+        // 4º Item do Arquivo Instruções.pdf <SOBRE>
+        
+            //NOME
+            let i_nome = document.querySelector('#nome');
+            if(i_nome != null){
+                i_nome.addEventListener('change',function(){ 
+                    ga('send', 'event', "contato", i_nome.getAttribute('id'), "preencheu");
+                })
+            }
+            //EMAIL
+            let i_email = document.querySelector('#email');
+            if(i_email != null){
+                i_email.addEventListener('change',function(){ 
+                    ga('send', 'event', "contato", i_email.getAttribute('id'), "preencheu");
+                })
+            }
+            //TELEFONE
+            let i_telefone = document.querySelector('#telefone');
+            if(i_telefone != null){
+                i_telefone.addEventListener('change',function(){ 
+                    ga('send', 'event', "contato", i_telefone.getAttribute('id'), "preencheu");
+                })
+            }
+            //ACEITO
+            let i_aceito = document.querySelector('#aceito');
+            if(i_aceito != null){
+                i_aceito.addEventListener('change',function(){ 
+                    ga('send', 'event', "contato", i_aceito.getAttribute('id'), "preencheu"); 
+                })
+            }
+
+            //MENSAGEM
+            var mensagem = setInterval(function(){
+                let lightbox_enviar_txt = document.querySelector('body').classList.value
+                if( lightbox_enviar_txt.includes('lightbox-open')){
+                    ga('send', 'event', "contato", "enviado", "enviado"); 
+                    clearInterval(mensagem);
+                }
+            },2000)
